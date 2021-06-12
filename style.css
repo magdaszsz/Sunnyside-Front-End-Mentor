@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.text {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero {
+  height: 80vh;
+  background-image: url(images/desktop/image-header.jpg);
+  background-size: cover;
+}
+
+.card {
+  //height: 600px;
+  width: 50%;
+}
+
+.grid div {
+  width: 50%;
+}
+
+.grid img {
+  width: 100%;
+}
+
+    /* font-family: 'Barlow', sans-serif; */
+
+    
+
+h2 {
+font-family: 'Fraunces', serif;
+font-size: 2.2rem;
+}
+
+p {
+  font-family: 'Barlow', sans-serif;
+  color: hsl(213, 9%, 39%);
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.gallery {
+  display: grid;
+  grid-template-areas: "milk orange cone sugar";
+}
+
+@media (max-width: 700px) {
+  .transform__image {
+    /* background-image: url(images/mobile/image-transform.jpg); */
+    order: 1;
+  }
+
+  .transform {
+    order: 2;
+  }
+
+  .stand-out__image {
+    order: 3;
+  }
+
+  .stand-out {
+    order: 4;
+  }
+
+  .design {
+    order: 5;
+  }
+
+  .photography {
+    order: 6;
+  }
+
+  .grid > div {
+    min-height: 60vh;
+    width: 100%;
+  }
+  .gallery {
+    grid-template-areas:
+      "milk orang"
+      "cone sugar";
+  }
+
+  .milk {
+    grid-area: milk;
+  }
+
+  .orange {
+    grid-area: orang;
+  }
+
+  .cone {
+    grid-area: cone;
+  }
+
+  .sugar {
+    grid-area: sugar;
+  }
+
+  .gallery img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+footer svg {
+  margin: 0 auto;
+  display: block;
+}
+
+footer {
+  background-color: hsl(168, 34%, 61%);
+  //display: grid;
+  //justify-content: center;
+  //flex-direction: column;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer__socials {
+  //width: min(220px, 40%);
+  width: 220px;
+}
+
+.footer__nav {
+  width: 300px;
+  margin: 2em auto;
+}
+
+a {
+  height: 100%;
+  display: block;
+  padding: 0.5em;
+}
+
+.footer__nav li a {
+  color: hsl(168, 34%, 21%);
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+  background: white;
+}
