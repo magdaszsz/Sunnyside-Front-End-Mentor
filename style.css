@@ -3,7 +3,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
 }
 
 .container {
@@ -20,17 +25,25 @@
 }
 
   nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 80%;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 0 auto;
     padding: 1rem 0;
   }
 
   .menu-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     list-style-type: none;
-    align-items: baseline;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
 
   .menu-desktop-item {
@@ -79,14 +92,19 @@ a {
 }
 
 .grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card {
   width: 50%;
   background-color: white;
+ 
 }
+
 
 .transform__image {
   background-image: url(images/desktop/image-transform.jpg);
@@ -96,11 +114,14 @@ a {
 
 .stand-out__image {
   background-image: url(images/desktop/image-stand-out.jpg);
+   background-position: center;
+  height: 70vh;
 }
 
 .card__body {
   height: 100%;
   width: 50%;
+  display: -ms-grid;
   display: grid;
   place-content: center;
   margin: 0 auto;
@@ -129,7 +150,8 @@ a {
   left: 0;
   z-index: -1;
   border-radius: 10px;
-  box-shadow: 0 0 5px hsl(7, 99%, 90%);;
+  -webkit-box-shadow: 0 0 5px hsl(7, 99%, 90%);
+          box-shadow: 0 0 5px hsl(7, 99%, 90%);;
   background-color: hsl(7, 99%, 90%);
 }
 
@@ -159,38 +181,30 @@ a {
   height: 70vh;
 }
 
-/* .outside {
-  position: relative;
-}
-
-.inside {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
- 
-} */
-
-
-
-
-
-/* .grid div {
-  width: 50%;
-} */
-
 .card img {
   width: 100%;
 }
 
 .photography,
 .design {
+  display: -ms-grid;
   display: grid;
   height: 70vh;
   place-content: end center;
   text-align: center;
-  padding: 4em 6em;
+  padding: 3em 4.5em;
+}
+
+.design h2, 
+.design p {
+  color: hsl(167, 40%, 24%);
+  margin-top: 2rem;
+}
+
+.photography h2,
+.photography p {
+ color: hsl(198, 62%, 26%);
+ margin-top: 2rem;
 }
 
 /* font-family: 'Barlow', sans-serif; */
@@ -199,13 +213,19 @@ a {
 
 .testimonials {
   padding: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
 }
 
 .testimonials__card {
+  display: -ms-grid;
   display: grid;
   width: 400px;
   padding: 0 1rem;
@@ -263,34 +283,45 @@ p {
 
 img {
   max-width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .gallery {
+  display: -ms-grid;
   display: grid;
-  grid-template-areas: "milk orang cone sugar";
+      grid-template-areas: "milk orang cone sugar";
 }
 
 .milk {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: milk;
 }
 
 .orange {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: orang;
 }
 
 .cone {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: cone;
 }
 
 .sugar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
   grid-area: sugar;
 }
 
 .gallery img {
   height: 350px;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* footer */
@@ -308,9 +339,13 @@ footer {
 
 footer ul {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer__socials {
@@ -335,30 +370,53 @@ a:focus {
   background: white;
 }
 
+
+
 @media (min-width: 700px) and (max-width: 1000px) {
   .card__heading, 
   .card__body-link {
     font-size: 1.1rem;
   }
 
+  .hero {
+    height: 60vh;
+  }
   .card__body {
     width: 80%;
+  }
+
+.design,
+  .photography,
+  .card {
+    /* height: 30vh;
+   padding: 1em 1.5em; */
+    background-size: cover;
+  } 
+
+  .design p, 
+  .photography p {
+    margin-top: 1rem;
   }
 }
 
 @media (max-width: 700px) {
 
+  .hero {
+    height: 90vh;
+  }
+
 .transform__image {
   background-image: url(images/mobile/image-transform.jpg);
   background-position: center;
-  background-size: contain;
   height: 50vh;
+  background-repeat: no-repeat;
 }
 
 .stand-out__image {
   background-image: url(images/mobile/image-stand-out.jpg);
     background-position: center;
-  background-size: contain;
+  background-size: cover;
+  height: 50vh;
   background-repeat: no-repeat;
 }
 
@@ -374,6 +432,8 @@ a:focus {
   .design, 
   .photography {
     padding: 3em 2em;
+    height: 90vh;
+    
   }
 
   .card__body {
@@ -381,27 +441,39 @@ a:focus {
     width: 90%;
   }
   .transform__image {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 
   .transform {
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 
   .stand-out__image {
-    order: 3;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 
   .stand-out {
-    order: 4;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
   }
 
   .design {
-    order: 5;
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
   }
 
   .photography {
-    order: 6;
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
   }
 
   .grid > div {
@@ -414,8 +486,30 @@ a:focus {
   }
 
   .gallery {
-    grid-template-areas:
+        grid-template-areas:
       "milk orang"
       "cone sugar";
   }
+
+  .milk {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .orange {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+
+  .cone {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+
+  .sugar {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
 }
+
+
